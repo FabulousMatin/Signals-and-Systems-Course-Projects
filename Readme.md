@@ -13,6 +13,29 @@
 ## CA1: Introducion, Linear Regression and Distance Estimation 
 Implementation of linear regression and gradient descent.
 
+```matlab
+learning_rate = 0.3;
+w = 10;
+b = 10;
+figure;
+for i=1:100
+    dw = 1/length(x) * sum((x .* (w .* x + b - y)));
+    db = 1/length(x) * sum(w .* x + b - y);
+    w = w - dw * learning_rate;
+    b = b - db * learning_rate;
+    cla;
+    plot(x,y,'b.');
+    hold on;
+    u = -1:0.01:1;
+    plot(u,w.*u+b,'r','LineWidth', 3);
+    axis([-1, 1, -4, 4]);
+    text(-0.9,3.5,sprintf('iterate = %d, loss = %.3f, w = %.3f, b = %.3f', i, loss(y,x,w,b), w, b),'Color','#800080');
+    drawnow;
+    pause(0.1)
+end
+```
+![real rime plot](./CA1/gradiant%20descent.gif)
+
 Estimating distance using template matching. by shifting sent signal and calculating correlation of of it and received signal we can estimate distance of an object. To simulate real situtaions, a normal-distributed noise will be added.
 
 ## CA2: Veichle Registration Plate Detection and OCR 
