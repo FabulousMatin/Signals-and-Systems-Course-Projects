@@ -34,7 +34,7 @@ for i=1:100
     pause(0.1)
 end
 ```
-![real rime plot](./CA1/gradiant%20descent.gif)
+![alt-link](./CA1/gradient%20descent.gif)
 
 Estimating distance using template matching. by shifting sent signal and calculating correlation of of it and received signal we can estimate distance of an object. To simulate real situtaions, a normal-distributed noise will be added.
 
